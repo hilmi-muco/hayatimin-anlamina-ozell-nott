@@ -196,80 +196,6 @@ p {
     font-size: 20px; 
 }
 
-@media screen and (min-width: 651px) {
-    .letter-container {
-        position: fixed; 
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        width: 90vw; 
-        max-width: 850px; 
-        aspect-ratio: 16/9;
-        z-index: 1000; 
-        opacity: 0;
-        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        pointer-events: none;
-    }
-
-    .letter-container.show { 
-        transform: translate(-50%, -50%) scale(1); 
-        opacity: 1; 
-        pointer-events: auto; 
-    }
-
-    .book-content {
-        display: flex; 
-        width: 100%; 
-        height: 100%;
-        background: var(--paper);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        border-radius: 5px;
-        background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
-    }
-
-    .page {
-        flex: 1; 
-        padding: 25px;
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center;
-        border: 1px solid #e0d0b0; 
-        position: relative;
-    }
-
-    .left-page { 
-        background-color: #f7f1e3; 
-        border-right: 1px solid #ccc; 
-    }
-    
-    .right-page { 
-        background-color: #fffcf5; 
-        text-align: center;
-    }
-    
-    .signature {
-        width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .polaroid { 
-        background: white; 
-        padding: 10px 10px 30px 10px; 
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-        transform: rotate(-2deg); 
-        width: 80%; 
-        max-width: 300px; 
-    }
-    
-    .mobile-btn { 
-        display: none; 
-    }
-}
-
 @media screen and (max-width: 650px) {
     .letter-container {
         position: fixed; 
@@ -295,9 +221,9 @@ p {
     .book-content {
         position: relative;
         width: 88vw; 
-        height: 80vh; 
+        height: 82vh; /* Ekranı biraz daha iyi doldurması için yüksekliği artırdık */
         max-width: 400px; 
-        max-height: 720px;
+        max-height: 750px;
         transform-style: preserve-3d;
         transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
         background: transparent;
@@ -322,7 +248,7 @@ p {
         flex-direction: column; 
         justify-content: space-between; 
         align-items: center;
-        padding: 15px 15px;
+        padding: 20px 15px; /* Kenar boşluklarını dengeledik */
         background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
         overflow: hidden;
     }
@@ -339,32 +265,34 @@ p {
         justify-content: center; 
     }
 
+    /* Yazı boyutlarını eski dolgun haline getirdik */
     h1 {
-        font-size: 21px;
-        margin-bottom: 5px;
+        font-size: 24px;
+        margin-bottom: 10px;
         margin-top: 5px;
     }
 
     p {
-        font-size: 15px;
-        line-height: 1.4;
-        margin-bottom: 5px;
+        font-size: 18px;
+        line-height: 1.45;
+        margin-bottom: 10px;
+        padding: 0 5px;
     }
 
     .signature {
-        margin-top: 10px;
-        margin-bottom: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
-    .love { font-size: 15px; }
-    .name { font-size: 14px; }
+    .love { font-size: 18px; }
+    .name { font-size: 16px; }
 
     .text-scroll { 
         width: 100%; 
         flex-grow: 1;
         display: flex; 
         flex-direction: column; 
-        justify-content: space-evenly;
+        justify-content: space-evenly; /* Yazıların sayfaya eşit dağılmasını sağlar */
         align-items: center; 
         text-align: center;
         overflow: hidden;
@@ -386,11 +314,11 @@ p {
         justify-content: center; 
         gap: 8px;
         width: 80%; 
-        padding: 10px 0;
+        padding: 12px 0; /* Butonu da eski dolgunluğuna getirdik */
         border: none; 
         border-radius: 50px;
         font-family: 'Cormorant Garamond', serif; 
-        font-size: 17px; 
+        font-size: 18px; 
         font-weight: bold;
         cursor: pointer;
         box-shadow: 0 5px 15px rgba(123,0,30,0.2);
